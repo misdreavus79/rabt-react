@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Tuxedo Shop at Macy's Store Locator - Macy's</title>
+        <!--
+        Modify the meta tags below to your liking
+        -->
+        <link href="//storage.googleapis.com/static.mcomnyapps.net/favicon.ico" rel="shortcut icon">
+        <meta name="title" content="The Tuxedo Shop at Macy's Store Locator - Macy's">
+        <meta name="description" content="Browse The Tuxedo Shop at Macy's locations near you with Macy's store locator. Find information on The Tuxedo Shop at Macy's address, hours, phone number and more.">
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="The Tuxedo Shop at Macy's Store Locator - Macy's" />
+        <meta property="og:description" content="Browse The Tuxedo Shop at Macy's locations near you with Macy's store locator. Find information on The Tuxedo Shop at Macy's address, hours, phone number and more." />
+        <meta property="og:image" content="http://cmsstatic.mcomnyapps.net/379/2850/1385143284_mog_logo.png" />
+
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.8.3.min.js"></script>
+        <script type="text/javascript" src="//libs.coremetrics.com/v4.18.106/eluminate.js"></script>
+        <script type="text/javascript" src="//storage.googleapis.com/static.mcomnyapps.net/coremetrics/coremetrics.cmdatataggutils.js"></script>
+
+        <script>
+        //---------------------------------------
+        // Modify these variables to your liking
+        //---------------------------------------
+        var IMP_SDK_VERSION = "0.1.17";
+
+        //---------------------------------------
+        // End variables
+        //---------------------------------------
+    //Some comment here
+    var isProduction = /https?:\/\/social-(prod|preprod)\.herokuapp\.com/.test(window.location.href) || /https?:\/\/.*\.macys\.com/.test(window.location.href) || /https?:\/\/social\.macys\.com/.test(window.location.href);
+
+    var isPreproduction = /(http:\/\/|https:\/\/)social-preprod\.herokuapp\.com/.test(window.location.href);
+
+    var isStaging = /(http:\/\/|https:\/\/)social-stage\.herokuapp\.com/.test(window.location.href);
+
+    var isLocal = false;
+
+        var VERSION_DIR = "";
+
+        var navUserAgent = navigator.userAgent.toLowerCase();
+        var isIPhone = (navUserAgent.indexOf("iphone") != -1);
+        var isIPad = (navUserAgent.indexOf("ipad") != -1);
+        var android = (navUserAgent.indexOf("android") != -1);
+        var isIpod = (navUserAgent.indexOf("ipod") != -1);
+        var isBlackberry = (navUserAgent.indexOf("blackberry") != -1);
+        var isMobile = (isIPhone || android || isBlackberry || isIpod);
+        var poolRoot = '';
+
+            cm_HOST = 'www3.macys.com/cm?';
+            cm_ClientID = '90067660';
+        </script>
+        <script type="text/javascript">
+            // Cache-busting using timestamp. Have to dynamically create script tag with document.write for now,
+            // replace with server-side rendered index.html, probably.
+
+            (function(impSdkVersion) {
+                var domain = 'imp-dev.herokuapp.com';
+                var sdkUrl = 'secure-netstorage.macys.com/social/prod/'+impSdkVersion+'/public/modules/imp-sdk.js';
+                if (isProduction && isPreproduction) {
+                    domain = 'imp-stage.herokuapp.com';
+                    sdkUrl = 'secure-netstorage.macys.com/social/prod/'+impSdkVersion+'/public/modules/imp-sdk.js';
+                }
+                else if (isProduction && !isPreproduction) {
+                    domain = 'imp-prod.herokuapp.com';
+                    sdkUrl = 'secure-netstorage.macys.com/social/prod/'+impSdkVersion+'/public/modules/imp-sdk.js';
+                }
+                document.write('<script type="text/javascript" src="//'+sdkUrl+'?timestamp='+Date.now().toString()+'"></sc'+'ript>');
+                document.write('<meta property="og:url" content="'+window.location.origin+window.location.pathname+'" />');
+                if (isProduction && !isPreproduction) {
+                    document.write('<link rel="canonical" href="http://macys.com/social/tuxedo-shop-map/">');
+                }
+            })(IMP_SDK_VERSION);
+        </script>
+        <link type="text/css" rel="stylesheet" href="randomDirectory/ipad/prod/start.css">
+    </head>
+    <body>
+
+        <script>
+
+
+    /* for loading start.js and css based on root variable */
+    var DEEPLINK_DIR = window.location.href;
+    var FILES_ROOT = "randomDirectory/";
+    var PAGES_DIR = FILES_ROOT;
+
+    //document.write(unescape("%3Clink href='" + FILES_ROOT + "ipad/prod/start.css' rel='stylesheet' type='text/css'/%3E"));
+        </script>
+        <div id="myHeaderContainer"></div>
+        <div id="ImpSdkHeaderContainer"></div>
+        <div id="finderContainer" style="margin: auto;">
+            <div id="navContainer">
+            </div>
+            <div id="bodyContainer">
+                <div class="loading">
+                    <div id="overlay"></div>
+                    <div id="loadingMessage"></div>
+                </div>
+                <div id="pageContainer">
+                </div>
+            </div>
+            <div id="footerContainer">
+                <div id="footer">
+                </div>
+            </div>
+        </div>
+        <div id="myFooterContainer"></div>
+        <div id="ImpSdkFooterContainer"></div>
+        <script>
+            ImpSdk.showHeaderAndFooter();
+        </script>
+        <script type="text/javascript" src="randomDirectory/ipad/prod/start.js"></script>
+        <script src="react/build/react.js"></script>
+        <script src="react/build/react-dom.js"></script>
+        <script src="app.js"></script>
+        <img src='//pixel.mathtag.com/event/img?mt_id=707437&mt_adid=108027&v1=&v2=&v3=&s1=&s2=&s3=' width="1px" height="1px" border="0" />
+    </body>
+</html>
+
+
