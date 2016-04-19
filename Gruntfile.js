@@ -8,35 +8,45 @@ module.exports = function(grunt) {
 				}				
 			},
 			babel: {
-				files: ['react/app.js'],
+				files: ['src/app.js'],
 				tasks: ['babel:dist']
+			},
+			browserify: {
+				files: ['app.js'],
+				tasks: ['browserify']
 			}
 		},
 		babel: {
 			options: {
-				sourceMap: false,
-				plugins: ['transform-react-jsx'],
+				sourceMap: true,
+				plugins: [
+					'transform-react-jsx',
+				],
     			presets: ['es2015', 'react']
 			},
 			dist: {
 				files: {
-					"app.js": "react/app.js"
+					"app.js": ["src/app.js", "src/ContactsList.js"]
+				}
+			}
+		},
+		browserify: {
+			options: {
+				alias: {
+					'ContactsList': './src/ContactsList.js'
 				}
 			},
-			jsx: {
-				files: [{
-					expand: true,
-					cwd: 'source/js/jsx/', // Custom folder
-					src: ['*.jsx'],
-					dest: 'source/js/jsx-compiled/', // Custom folder
-					ext: '.js'
-				}]
+			dist: {
+				files: {
+					'app2.js': 'app.js'
+				}
 			}
+			
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-babel');
-	//grunt.registerTask('babel', ['babel']);
+	grunt.loadNpmTasks('grunt-browserify');
 	grunt.registerTask('default', ['watch']);
 };
