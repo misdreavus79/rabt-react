@@ -7,46 +7,40 @@ module.exports = function(grunt) {
 					livereload: 35729
 				}				
 			},
-			babel: {
-				files: ['src/app.js'],
-				tasks: ['babel:dist']
-			},
+			// babel: {
+			// 	files: ['src/app.js'],
+			// 	tasks: ['babel:dist']
+			// },
 			browserify: {
-				files: ['app.js'],
+				files: ['src/*.js'],
 				tasks: ['browserify']
 			}
 		},
-		babel: {
-			options: {
-				sourceMap: true,
-				plugins: [
-					'transform-react-jsx',
-				],
-    			presets: ['es2015', 'react']
-			},
-			dist: {
-				files: {
-					"app.js": ["src/app.js", "src/ContactsList.js"]
-				}
-			}
-		},
 		browserify: {
-			options: {
-				alias: {
-					'ContactsList': './src/ContactsList.js'
-				}
-			},
 			dist: {
-				files: {
-					'app2.js': 'app.js'
-				}
+				options: {
+					transform: [
+						[
+							'babelify', 
+							{
+								presets: ['es2015', 'react'], 
+								plugins: ['transform-react-jsx']
+							}
+						]
+					],
+					alias: {
+						'Contact': './src/Contact.js',
+						'ContactsList': './src/ContactsList',
+						'Events': './src/Events.js'
+					}
+				},        
+				src: ['src/app.js'],
+				dest: 'app.js',
 			}
-			
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-babel');
 	grunt.loadNpmTasks('grunt-browserify');
 	grunt.registerTask('default', ['watch']);
 };

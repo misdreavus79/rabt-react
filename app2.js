@@ -22,17 +22,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+// import ContactsList from './src/ContactsList';
 
-var ContactsList = function (_React$Component) {
-	_inherits(ContactsList, _React$Component);
 
-	function ContactsList() {
-		_classCallCheck(this, ContactsList);
+var App = function (_React$Component) {
+	_inherits(App, _React$Component);
 
-		return _possibleConstructorReturn(this, Object.getPrototypeOf(ContactsList).apply(this, arguments));
+	function App() {
+		_classCallCheck(this, App);
+
+		return _possibleConstructorReturn(this, Object.getPrototypeOf(App).apply(this, arguments));
 	}
 
-	_createClass(ContactsList, [{
+	_createClass(App, [{
 		key: 'render',
 		value: function render() {
 			return _react2.default.createElement(
@@ -48,8 +50,10 @@ var ContactsList = function (_React$Component) {
 		}
 	}]);
 
-	return ContactsList;
+	return App;
 }(_react2.default.Component);
+
+_reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('pageContainer'));
 
 
 },{"jquery":3,"react":167,"react-dom":4}],2:[function(require,module,exports){
