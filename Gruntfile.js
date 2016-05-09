@@ -7,10 +7,6 @@ module.exports = function(grunt) {
 					livereload: 35729
 				}				
 			},
-			// babel: {
-			// 	files: ['src/app.js'],
-			// 	tasks: ['babel:dist']
-			// },
 			browserify: {
 				files: ['src/*.js'],
 				tasks: ['browserify']
