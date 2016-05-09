@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 					}
 				},        
 				src: ['src/app.js'],
-				dest: 'app.js',
+				dest: 'start.js',
 			}
 		}
 	});

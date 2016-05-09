@@ -1,0 +1,4 @@
+It should detect mobile/desktop and server appropriate content.
+It should link to the correct urls (for each button/link).
+It should receive a message from the motherboard on /form page.
+When form is submitted, it should receive an object with appointment confirmation info.
