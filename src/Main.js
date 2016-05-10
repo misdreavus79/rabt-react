@@ -4,7 +4,7 @@ import ContactsList from 'ContactsList';
 import $ from 'jquery';
 import EventsFinder from 'Events';
 
-class App extends React.Component {
+class Main extends React.Component {
 	render(){
 		return (
 			<section>

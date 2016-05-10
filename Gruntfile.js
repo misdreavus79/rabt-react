@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		watch: {
 			html: {
-				files: ['*.html', 'app.js'],
+				files: ['*.html', 'start.js'],
 				options: {
 					livereload: 35729
 				}				
@@ -27,10 +27,11 @@ module.exports = function(grunt) {
 					alias: {
 						'Contact': './src/Contact.js',
 						'ContactsList': './src/ContactsList',
-						'Events': './src/Events.js'
+						'Events': './src/Events.js',
+						'Header': './src/Head3er.js'
 					}
 				},        
-				src: ['src/app.js'],
+				src: ['src/Main.js'],
 				dest: 'start.js',
 			}
 		}
