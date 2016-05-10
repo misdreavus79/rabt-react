@@ -1,7 +1,6 @@
 import React from "react";
-import ReactDOM from 'react-dom';
 
-class Header extends React.Component {
+class StoreList extends React.Component {
 	constructor(){
 		super();
 		this.state {

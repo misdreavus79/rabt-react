@@ -2,15 +2,18 @@ import React from "react";
 import ReactDOM from 'react-dom';
 import ContactsList from 'ContactsList';
 import $ from 'jquery';
-import EventsFinder from 'Events';
+import Header from 'Header';
+import Supporting from 'Supporting';
+
 
 class Main extends React.Component {
 	render(){
 		return (
-			<section>
-				<h1>Stores List</h1>
+			<main id="pageContainer" role="main">
+				<Header />
 				<ContactsList contacts={this.props.contacts} />
-			</section>
+				<Supporting />
+			</main>
 		)
 	}
 }
@@ -24,7 +27,7 @@ $.ajax({
     contentType: 'application/json',
 	success: function(data){
 		contacts = data.events;
-		ReactDOM.render(<App contacts={contacts} />, document.getElementById('pageContainer'));
+		ReactDOM.render(<Main contacts={contacts} />, document.getElementById('bodyContainer'));
 	},
 	error: function(){
 		console.log('error');

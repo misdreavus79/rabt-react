@@ -1,10 +1,92 @@
 {
 	"locations": [
 		{
-			"store_name": "Kenwood",
-			"city": "Cincinnati",
-			"state": "OH"
+			"state": "Ohio",
+			"stores": [
+				{
+					"store_name": "Kenwood",
+					"city": "Cincinnati"
+				}
+			]
+		},
+		{
+			"state": "Pennsylvania",
+			"stores": [
+				{
+					"store_name": "King of Prussia",
+					"city": "King of Prussia"
+				}
+			]
+		},
+		{
+			"state": "California",
+			"stores": [
+				{
+					"store_name": "South Coast Plaza Home",
+					"city": "Costa Mesa"
+				},
+				{
+					"store_name": "Mission Valley",
+					"city": "San Diego"
+				},
+				{
+					"store_name": "Union Square",
+					"city": "San Fransisco"
+				},
+				{
+					"store_name": "Valley Fair",
+					"city": "Santa Clara"
+				}
+			]
+		},
+		{
+			"state": "Georgia",
+			"stores": [
+				{
+					"store_name": "Lenox Square Mall",
+					"city": "Atlanta"
+				}
+			]
+		},
+		{
+			"state": "Illinois",
+			"stores": [
+				{
+					"store_name": "State Street",
+					"city": "Chicago"
+				}
+			]
+		},
+		{
+			"state": "New York",
+			"stores": [
+				{
+					"store_name": "Roosevelt Field",
+					"city": "Garden City"
+				}
+			]
+		},
+		{
+			"state": "Virginia",
+			"stores": [
+				{
+					"store_name": "Pentagon",
+					"city": "Arlington"
+				},
+				{
+					"store_name": "Tyson's Corner Center",
+					"city": "McLean"
+				}
+			]
+		},
+		{
+			"state": "Washington",
+			"stores": [
+				{
+					"store_name": "Bellevue Square",
+					"city": "Bellevue"
+				}
+			]
 		}
-
 	]
 }
