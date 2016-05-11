@@ -3,7 +3,7 @@ import React from "react";
 class Supporting extends React.Component{
 	render(){
 		return (
-			<section className="supporting">
+			<section className="cSupporting">
 				<h2>TOP 3 REASONS TO COME SEE US</h2>
 				<ul className="reasons">
 					<li>

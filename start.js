@@ -29218,17 +29218,13 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _ContactsList = require('ContactsList');
-
-var _ContactsList2 = _interopRequireDefault(_ContactsList);
-
 var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _Header = require('Header');
+var _Primary = require('Primary');
 
-var _Header2 = _interopRequireDefault(_Header);
+var _Primary2 = _interopRequireDefault(_Primary);
 
 var _Supporting = require('Supporting');
 
@@ -29257,8 +29253,8 @@ var Main = function (_React$Component) {
 			return _react2.default.createElement(
 				'main',
 				{ id: 'pageContainer', role: 'main' },
-				_react2.default.createElement(_Header2.default, null),
-				_react2.default.createElement(_ContactsList2.default, { contacts: this.props.contacts }),
+				_react2.default.createElement('img', { src: 'main-img.png', className: 'mainImg' }),
+				_react2.default.createElement(_Primary2.default, { locations: this.props.locations }),
 				_react2.default.createElement(_Supporting2.default, null)
 			);
 		}
@@ -29267,24 +29263,86 @@ var Main = function (_React$Component) {
 	return Main;
 }(_react2.default.Component);
 
-var contacts = [];
+var locations = [{
+	"state": "Ohio",
+	"stores": [{
+		"store_name": "Kenwood",
+		"city": "Cincinnati"
+	}]
+}, {
+	"state": "Pennsylvania",
+	"stores": [{
+		"store_name": "King of Prussia",
+		"city": "King of Prussia"
+	}]
+}, {
+	"state": "California",
+	"stores": [{
+		"store_name": "South Coast Plaza Home",
+		"city": "Costa Mesa"
+	}, {
+		"store_name": "Mission Valley",
+		"city": "San Diego"
+	}, {
+		"store_name": "Union Square",
+		"city": "San Fransisco"
+	}, {
+		"store_name": "Valley Fair",
+		"city": "Santa Clara"
+	}]
+}, {
+	"state": "Georgia",
+	"stores": [{
+		"store_name": "Lenox Square Mall",
+		"city": "Atlanta"
+	}]
+}, {
+	"state": "Illinois",
+	"stores": [{
+		"store_name": "State Street",
+		"city": "Chicago"
+	}]
+}, {
+	"state": "New York",
+	"stores": [{
+		"store_name": "Roosevelt Field",
+		"city": "Garden City"
+	}]
+}, {
+	"state": "Virginia",
+	"stores": [{
+		"store_name": "Pentagon",
+		"city": "Arlington"
+	}, {
+		"store_name": "Tyson's Corner Center",
+		"city": "McLean"
+	}]
+}, {
+	"state": "Washington",
+	"stores": [{
+		"store_name": "Bellevue Square",
+		"city": "Bellevue"
+	}]
+}];
 
-_jquery2.default.ajax({
-	url: 'http://dev.mcomnyapps.net/events/?service=feed_events2&event_id=3&noheader=1',
-	dataType: "jsonp",
-	jsonpCallback: "cmsCallback",
-	contentType: 'application/json',
-	success: function success(data) {
-		contacts = data.events;
-		_reactDom2.default.render(_react2.default.createElement(Main, { contacts: contacts }), document.getElementById('bodyContainer'));
-	},
-	error: function error() {
-		console.log('error');
-	}
-});
+// $.ajax({
+// 	url: 'http://dev.mcomnyapps.net/events/?service=feed_events2&event_id=3&noheader=1',
+// 	dataType: "jsonp",
+//     jsonpCallback: "cmsCallback",
+//     contentType: 'application/json',
+// 	success: function(data){
+// 		contacts = data.events;
+// 		ReactDOM.render(<Main contacts={contacts} stores={stores} />, document.getElementById('bodyContainer'));
+// 	},
+// 	error: function(){
+// 		console.log('error');
+// 	}
+// });
 
-},{"ContactsList":"ContactsList","Header":"Header","Supporting":"Supporting","jquery":2,"react":166,"react-dom":3}],"ContactsList":[function(require,module,exports){
-'use strict';
+_reactDom2.default.render(_react2.default.createElement(Main, { locations: locations }), document.getElementById('bodyContainer'));
+
+},{"Primary":"Primary","Supporting":"Supporting","jquery":2,"react":166,"react-dom":3}],"CallToAction":[function(require,module,exports){
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -29292,13 +29350,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require('react');
+var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
-
-var _Contact = require('Contact');
-
-var _Contact2 = _interopRequireDefault(_Contact);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29308,56 +29362,118 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ContactsList = function (_React$Component) {
-	_inherits(ContactsList, _React$Component);
+var CallToAction = function (_React$Component) {
+	_inherits(CallToAction, _React$Component);
 
-	function ContactsList() {
-		_classCallCheck(this, ContactsList);
+	function CallToAction() {
+		_classCallCheck(this, CallToAction);
 
-		var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ContactsList).call(this));
-
-		_this.state = {
-			search: ''
-		};
-		return _this;
+		return _possibleConstructorReturn(this, Object.getPrototypeOf(CallToAction).apply(this, arguments));
 	}
 
-	_createClass(ContactsList, [{
-		key: 'updateSearch',
-		value: function updateSearch(e) {
-			this.setState({
-				search: e.target.value
-			});
-		}
-	}, {
-		key: 'render',
+	_createClass(CallToAction, [{
+		key: "render",
 		value: function render() {
-			var _this2 = this;
-
-			var filteredContacts = this.props.contacts.filter(function (single) {
-				return single.store_name.toLowerCase().includes(_this2.state.search.toLowerCase());
-			});
 			return _react2.default.createElement(
-				'section',
-				{ className: 'ppp' },
-				_react2.default.createElement('input', { type: 'text', value: this.state.search, onChange: this.updateSearch.bind(this) }),
+				"section",
+				{ className: "cCTA" },
 				_react2.default.createElement(
-					'ul',
+					"a",
+					{ href: "/book/", className: "button" },
+					"book an appointment now"
+				),
+				_react2.default.createElement(
+					"a",
+					{ href: "https://www.macys.com/registry/wedding/registryhome", target: "_blank" },
+					"access your registry"
+				),
+				_react2.default.createElement(
+					"a",
+					{ href: "https://www.macys.com/registry/wedding/registryhome", target: "_blank" },
+					"create your registry"
+				),
+				_react2.default.createElement(
+					"p",
 					null,
-					filteredContacts.map(function (single) {
-						return _react2.default.createElement(_Contact2.default, { contact: single, key: single.event_id });
+					"Can't book a location above? ",
+					_react2.default.createElement(
+						"a",
+						{ href: "http://www1.macys.com/shop/store/search?cm_sp=MWEDD-_-Registry-_-find%20a%20store%20near%20you", target: "_blank" },
+						"find a store near you"
+					),
+					"."
+				)
+			);
+		}
+	}]);
+
+	return CallToAction;
+}(_react2.default.Component);
+
+exports.default = CallToAction;
+
+},{"react":166}],"Locations":[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _States = require("States");
+
+var _States2 = _interopRequireDefault(_States);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Locations = function (_React$Component) {
+	_inherits(Locations, _React$Component);
+
+	function Locations() {
+		_classCallCheck(this, Locations);
+
+		return _possibleConstructorReturn(this, Object.getPrototypeOf(Locations).apply(this, arguments));
+	}
+
+	_createClass(Locations, [{
+		key: "render",
+		value: function render() {
+			return _react2.default.createElement(
+				"section",
+				{ className: "cLocations" },
+				_react2.default.createElement(
+					"h2",
+					null,
+					"WE ARE CURRENTLY BOOKING DATES ONLINE FOR:"
+				),
+				_react2.default.createElement(
+					"ul",
+					null,
+					this.props.locations.map(function (single) {
+						return _react2.default.createElement(_States2.default, { state: single, key: single.state });
 					})
 				)
 			);
 		}
 	}]);
 
-	return ContactsList;
+	return Locations;
 }(_react2.default.Component);
 
-exports.default = ContactsList;
+exports.default = Locations;
 
-},{"Contact":"Contact","react":166}],"Contact":[function(require,module,exports){
+},{"States":"States","react":166}],"Primary":[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29370,6 +29486,18 @@ var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Title = require("Title");
+
+var _Title2 = _interopRequireDefault(_Title);
+
+var _Locations = require("Locations");
+
+var _Locations2 = _interopRequireDefault(_Locations);
+
+var _CallToAction = require("CallToAction");
+
+var _CallToAction2 = _interopRequireDefault(_CallToAction);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -29378,117 +29506,91 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Contact = function (_React$Component) {
-	_inherits(Contact, _React$Component);
+var Primary = function (_React$Component) {
+	_inherits(Primary, _React$Component);
 
-	function Contact() {
-		_classCallCheck(this, Contact);
+	function Primary() {
+		_classCallCheck(this, Primary);
 
-		return _possibleConstructorReturn(this, Object.getPrototypeOf(Contact).apply(this, arguments));
+		return _possibleConstructorReturn(this, Object.getPrototypeOf(Primary).apply(this, arguments));
 	}
 
-	_createClass(Contact, [{
+	_createClass(Primary, [{
+		key: "render",
+		value: function render() {
+			return _react2.default.createElement(
+				"article",
+				{ className: "cPrimary" },
+				_react2.default.createElement(_Title2.default, null),
+				_react2.default.createElement(_Locations2.default, { locations: this.props.locations }),
+				_react2.default.createElement(_CallToAction2.default, null)
+			);
+		}
+	}]);
+
+	return Primary;
+}(_react2.default.Component);
+
+exports.default = Primary;
+
+},{"CallToAction":"CallToAction","Locations":"Locations","Title":"Title","react":166}],"States":[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Store = require("Store");
+
+var _Store2 = _interopRequireDefault(_Store);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var States = function (_React$Component) {
+	_inherits(States, _React$Component);
+
+	function States() {
+		_classCallCheck(this, States);
+
+		return _possibleConstructorReturn(this, Object.getPrototypeOf(States).apply(this, arguments));
+	}
+
+	_createClass(States, [{
 		key: "render",
 		value: function render() {
 			return _react2.default.createElement(
 				"li",
 				null,
-				this.props.contact.address1,
-				" ",
-				_react2.default.createElement("br", null),
-				this.props.contact.address2,
-				" ",
-				_react2.default.createElement("br", null),
-				this.props.contact.city,
-				" ",
-				_react2.default.createElement("br", null),
-				this.props.contact.contact_email,
-				" ",
-				_react2.default.createElement("br", null),
-				this.props.contact.contact_phone,
-				" ",
-				_react2.default.createElement("br", null),
-				this.props.contact.date,
-				" ",
-				_react2.default.createElement("br", null),
-				this.props.contact.district,
-				" ",
-				_react2.default.createElement("br", null),
-				this.props.contact.end_time,
-				" ",
-				_react2.default.createElement("br", null),
-				this.props.contact.event_status,
-				" ",
-				_react2.default.createElement("br", null),
-				this.props.contact.floor,
-				" ",
-				_react2.default.createElement("br", null),
-				this.props.contact.phone,
-				" ",
-				_react2.default.createElement("br", null),
-				this.props.contact.region,
-				" ",
-				_react2.default.createElement("br", null),
-				this.props.contact.start_time,
-				" ",
-				_react2.default.createElement("br", null),
-				this.props.contact.state,
-				" ",
-				_react2.default.createElement("br", null),
-				this.props.contact.store_id,
-				" ",
-				_react2.default.createElement("br", null),
-				this.props.contact.store_name,
-				" ",
-				_react2.default.createElement("br", null),
-				this.props.contact.zip
+				this.props.state.state,
+				_react2.default.createElement(
+					"ul",
+					null,
+					this.props.state.stores.map(function (single) {
+						return _react2.default.createElement(_Store2.default, { location: single, key: single.city });
+					})
+				)
 			);
 		}
 	}]);
 
-	return Contact;
+	return States;
 }(_react2.default.Component);
 
-exports.default = Contact;
+exports.default = States;
 
-},{"react":166}],"Events":[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _jquery = require('jquery');
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var EventsFinder = function EventsFinder() {
-	var _this = this;
-
-	_classCallCheck(this, EventsFinder);
-
-	this.events = [];
-	_jquery2.default.ajax({
-		url: 'http://dev.mcomnyapps.net/events/?service=feed_events2&event_id=3&noheader=1',
-		dataType: "jsonp",
-		jsonpCallback: "cmsCallback",
-		contentType: 'application/json',
-		success: function success(data) {
-			_this.events = data.events;
-		},
-		error: function error() {
-			console.log('error');
-		}
-	});
-};
-
-exports.default = EventsFinder;
-
-},{"jquery":2}],"Header":[function(require,module,exports){
+},{"Store":"Store","react":166}],"Store":[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29509,44 +29611,32 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Header = function (_React$Component) {
-	_inherits(Header, _React$Component);
+var Store = function (_React$Component) {
+	_inherits(Store, _React$Component);
 
-	function Header() {
-		_classCallCheck(this, Header);
+	function Store() {
+		_classCallCheck(this, Store);
 
-		var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Header).call(this));
-
-		_this.state = {
-			ppp: 'waiting'
-		};
-		return _this;
+		return _possibleConstructorReturn(this, Object.getPrototypeOf(Store).apply(this, arguments));
 	}
 
-	_createClass(Header, [{
+	_createClass(Store, [{
 		key: "render",
 		value: function render() {
 			return _react2.default.createElement(
-				"section",
-				{ className: "cHead" },
-				_react2.default.createElement(
-					"h1",
-					null,
-					"Book your in-store registry appointment online"
-				),
-				_react2.default.createElement(
-					"p",
-					null,
-					"It's quick & easy—just click to see availability, pick a date & come on in for expert tips, advice for the perfect list & more."
-				)
+				"li",
+				null,
+				this.props.location.store_name,
+				" in ",
+				this.props.location.city
 			);
 		}
 	}]);
 
-	return Header;
+	return Store;
 }(_react2.default.Component);
 
-exports.default = Header;
+exports.default = Store;
 
 },{"react":166}],"Supporting":[function(require,module,exports){
 "use strict";
@@ -29583,7 +29673,7 @@ var Supporting = function (_React$Component) {
 		value: function render() {
 			return _react2.default.createElement(
 				"section",
-				{ className: "supporting" },
+				{ className: "cSupporting" },
 				_react2.default.createElement(
 					"h2",
 					null,
@@ -29670,5 +29760,60 @@ var Supporting = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Supporting;
+
+},{"react":166}],"Title":[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Title = function (_React$Component) {
+	_inherits(Title, _React$Component);
+
+	function Title() {
+		_classCallCheck(this, Title);
+
+		return _possibleConstructorReturn(this, Object.getPrototypeOf(Title).apply(this, arguments));
+	}
+
+	_createClass(Title, [{
+		key: "render",
+		value: function render() {
+			return _react2.default.createElement(
+				"section",
+				{ className: "cTitle" },
+				_react2.default.createElement(
+					"h1",
+					null,
+					"Book your in-store registry appointment online"
+				),
+				_react2.default.createElement(
+					"p",
+					null,
+					"It's quick & easy—just click to see availability, pick a date & come on in for expert tips, advice for the perfect list & more."
+				)
+			);
+		}
+	}]);
+
+	return Title;
+}(_react2.default.Component);
+
+exports.default = Title;
 
 },{"react":166}]},{},[167]);

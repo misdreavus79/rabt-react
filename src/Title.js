@@ -1,15 +1,9 @@
 import React from "react";
 
-class Header extends React.Component {
-	constructor(){
-		super();
-		this.state = {
-			ppp: 'waiting'
-		};
-	}
+class Title extends React.Component {
 	render(){
 		return (
-			<section className="cHead">
+			<section className="cTitle">
 				<h1>Book your in-store registry appointment online</h1>
 				<p>It's quick & easy—just click to see availability, pick a date & come on in for expert tips, advice for the perfect list & more.</p>
 			</section>
@@ -18,4 +12,4 @@ class Header extends React.Component {
 
 }
 
-export default Header;
+export default Title;

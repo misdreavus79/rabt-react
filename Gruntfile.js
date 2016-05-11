@@ -4,10 +4,7 @@ module.exports = function(grunt) {
 			html: {
 				files: ['*.html', 'start.js'],
 				options: {
-					livereload: {
-						host: 'localhost',
-        				port: 9000
-					}
+					livereload: 35729
 				}				
 			},
 			browserify: {
@@ -28,11 +25,13 @@ module.exports = function(grunt) {
 						]
 					],
 					alias: {
-						'Contact': './src/Contact.js',
-						'ContactsList': './src/ContactsList',
-						'Events': './src/Events.js',
-						'Header': './src/Header.js',
-						'Supporting': './src/Supporting.js'
+						'Title': './src/Title.js',
+						'Supporting': './src/Supporting.js',
+						'Locations': './src/Locations.js',
+						'States': './src/States.js',
+						'Store': './src/Store.js',
+						'CallToAction': './src/CallToAction.js',
+						'Primary': './src/Primary.js'
 					}
 				},        
 				src: ['src/Main.js'],
