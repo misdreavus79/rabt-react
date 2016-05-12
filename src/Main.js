@@ -25,7 +25,7 @@ class Main extends React.Component {
 			<main role="main" className={this.state.viewport}>
 				{(() => {
 					if(this.state.viewport === 'mobile'){
-						return <img src="main-img.png" className="mainImg" />
+						return <img src="main-img.jpg" className="mainImg" />
 					}
 				})()}
 				<Primary locations={this.props.locations} />
