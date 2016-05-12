@@ -7,7 +7,7 @@ class Primary extends React.Component{
 	render(){
 		return(
 			<article>
-				<section className="cPrimary">
+				<section className="cPrimary group">
 					<Title />
 					<Locations locations={this.props.locations} />
 					<CallToAction />

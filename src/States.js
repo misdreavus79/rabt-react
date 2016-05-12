@@ -4,8 +4,8 @@ import Store from "Store";
 class States extends React.Component {
 	render(){
 		return (
-			<li>
-				{this.props.state.state}
+			<li className="stateContainer">
+				<span className="state">{this.props.state.state}</span>
 				<ul>
 					{
 						this.props.state.stores.map((single) => {	
