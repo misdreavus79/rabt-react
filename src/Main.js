@@ -8,7 +8,7 @@ import Supporting from 'Supporting';
 class Main extends React.Component {
 	render(){
 		return (
-			<main id="pageContainer" role="main">
+			<main id="cMain" role="main">
 				<img src="main-img.png" className="mainImg" />
 				<Primary locations={this.props.locations} />
 				<Supporting />

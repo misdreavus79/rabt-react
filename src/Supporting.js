@@ -5,7 +5,7 @@ class Supporting extends React.Component{
 		return (
 			<section className="cSupporting">
 				<h2>TOP 3 REASONS TO COME SEE US</h2>
-				<ul className="reasons">
+				<ul className="reasons group">
 					<li>
 						<p className="num">1</p>
 						<h3>Your very own Registry Advisor</h3>
@@ -19,7 +19,7 @@ class Supporting extends React.Component{
 					<li>
 						<p className="num">3</p>
 						<h3>Know it all</h3>
-						<p>Learn more about our exclusive registry programs, like <a href="https://www.macys.com/registry/wedding/m/dream-fund?cm_sp=MWEDD-_-Registry-_-Dream%20Fund" target="_blank">Dream Fund</a>™ &amp; <a href="http://www1.macys.com/registry/wedding/m/perksprivileges?cm_sp=MWEDD-_-Registry-_-Perks%20and%20Privileges" target="_blank">Perks &amp; Privileges</a>.
+						<p>Learn more about our exclusive registry programs, like <a href="https://www.macys.com/registry/wedding/m/dream-fund?cm_sp=reg_hdr-_-wedding-registry-_-dream-fund_COL1" target="_blank">Dream Fund</a>™ &amp; <a href="http://www1.macys.com/registry/wedding/m/perksprivileges?cm_sp=MWEDD-_-Registry-_-CHECK%20OUT%20THE%20DEALS" target="_blank">Perks &amp; Privileges</a>.
 	</p>
 					</li>
 				</ul>
