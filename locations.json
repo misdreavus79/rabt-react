@@ -1,23 +1,5 @@
 [
 	{
-		"state": "Ohio",
-		"stores": [
-			{
-				"store_name": "Kenwood",
-				"city": "Cincinnati"
-			}
-		]
-	},
-	{
-		"state": "Pennsylvania",
-		"stores": [
-			{
-				"store_name": "King of Prussia",
-				"city": "King of Prussia"
-			}
-		]
-	},
-	{
 		"state": "California",
 		"stores": [
 			{
@@ -62,6 +44,24 @@
 			{
 				"store_name": "Roosevelt Field",
 				"city": "Garden City"
+			}
+		]
+	},
+	{
+		"state": "Ohio",
+		"stores": [
+			{
+				"store_name": "Kenwood",
+				"city": "Cincinnati"
+			}
+		]
+	},
+	{
+		"state": "Pennsylvania",
+		"stores": [
+			{
+				"store_name": "King of Prussia",
+				"city": "King of Prussia"
 			}
 		]
 	},

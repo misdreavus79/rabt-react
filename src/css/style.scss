@@ -1,4 +1,6 @@
 @import "normalize";
+@import "_colors";
+@import "_typography";
 
 .group:after{
 	content: '';
@@ -13,25 +15,65 @@ html{
 #bodyContainer{
 	width: 1080px;
 	margin: 0 auto;
+	border: 1px solid rgba(0, 0, 0, .2);
 }
 
 .cPrimary{
 	background-color: rgba(255,255,255,.4);
+	color: $darkGray;
 	width: 45%;
+}
+.cCTA{
+	.link:link, .link:visited{
+		color: $darkGray;
+		text-transform: uppercase;
+	}
+	.link:first-child{
+		margin-right: 40px;
+	}
+}
+.cSupporting{
+	.link:link, .link:visited{
+		color: $baseGray;
+	}
+}
+.button{
+	background-color: $mainColor;
+	color: $baseWhite;
+	text-decoration: none;
+	padding: 9px;
+	display: inline-block;
+	text-transform: uppercase;
 }
 
 .cSupporting{
 	h2{
-		box-shadow: 0 5px 3px 3px rgba(0, 0, 0, .2);
+		box-shadow: 0 3px 1px 1px rgba(0, 0, 0, .2);
 		text-align: center;
 	}
+	h3{
+		font-size: 24px;
+	}
 	ul{
-		padding: 0 12.5%;
+		padding: 0  43px;
 		width: 100%;
+		list-style: none;
 	}
 	li{
 		float: left;
-		width: 25%;
+		width: 330px;
 		text-align: center;
+		padding: 0 50px;
 	}
+}
+.num{
+	background-color: $mainColor;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 36px;
+	color: $baseWhite;
+	padding-top: 3px;
 }

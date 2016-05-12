@@ -29392,18 +29392,6 @@ var Main = function (_React$Component) {
 }(_react2.default.Component);
 
 var locations = [{
-	"state": "Ohio",
-	"stores": [{
-		"store_name": "Kenwood",
-		"city": "Cincinnati"
-	}]
-}, {
-	"state": "Pennsylvania",
-	"stores": [{
-		"store_name": "King of Prussia",
-		"city": "King of Prussia"
-	}]
-}, {
 	"state": "California",
 	"stores": [{
 		"store_name": "South Coast Plaza Home",
@@ -29435,6 +29423,18 @@ var locations = [{
 	"stores": [{
 		"store_name": "Roosevelt Field",
 		"city": "Garden City"
+	}]
+}, {
+	"state": "Ohio",
+	"stores": [{
+		"store_name": "Kenwood",
+		"city": "Cincinnati"
+	}]
+}, {
+	"state": "Pennsylvania",
+	"stores": [{
+		"store_name": "King of Prussia",
+		"city": "King of Prussia"
 	}]
 }, {
 	"state": "Virginia",
@@ -29507,18 +29507,22 @@ var CallToAction = function (_React$Component) {
 				{ className: "cCTA" },
 				_react2.default.createElement(
 					"a",
-					{ href: "/book/", className: "button" },
+					{ href: "book/", className: "button" },
 					"book an appointment now"
 				),
 				_react2.default.createElement(
-					"a",
-					{ href: "https://www.macys.com/registry/wedding/registryhome", target: "_blank" },
-					"access your registry"
-				),
-				_react2.default.createElement(
-					"a",
-					{ href: "https://www.macys.com/registry/wedding/registryhome", target: "_blank" },
-					"create your registry"
+					"p",
+					null,
+					_react2.default.createElement(
+						"a",
+						{ href: "https://www.macys.com/registry/wedding/registryhome", target: "_blank", className: "link" },
+						"access your registry"
+					),
+					_react2.default.createElement(
+						"a",
+						{ href: "https://www.macys.com/registry/wedding/registryhome", target: "_blank", className: "link" },
+						"create your registry"
+					)
 				),
 				_react2.default.createElement(
 					"p",
@@ -29526,7 +29530,7 @@ var CallToAction = function (_React$Component) {
 					"Can't book a location above? ",
 					_react2.default.createElement(
 						"a",
-						{ href: "http://www1.macys.com/shop/store/search?cm_sp=MWEDD-_-Registry-_-find%20a%20store%20near%20you", target: "_blank" },
+						{ href: "http://www1.macys.com/shop/store/search?cm_sp=MWEDD-_-Registry-_-find%20a%20store%20near%20you", target: "_blank", className: "link" },
 						"find a store near you"
 					),
 					"."
@@ -29867,13 +29871,13 @@ var Supporting = function (_React$Component) {
 							"Learn more about our exclusive registry programs, like ",
 							_react2.default.createElement(
 								"a",
-								{ href: "https://www.macys.com/registry/wedding/m/dream-fund?cm_sp=reg_hdr-_-wedding-registry-_-dream-fund_COL1", target: "_blank" },
+								{ href: "https://www.macys.com/registry/wedding/m/dream-fund?cm_sp=reg_hdr-_-wedding-registry-_-dream-fund_COL1", target: "_blank", className: "link" },
 								"Dream Fund"
 							),
 							"™ & ",
 							_react2.default.createElement(
 								"a",
-								{ href: "http://www1.macys.com/registry/wedding/m/perksprivileges?cm_sp=MWEDD-_-Registry-_-CHECK%20OUT%20THE%20DEALS", target: "_blank" },
+								{ href: "http://www1.macys.com/registry/wedding/m/perksprivileges?cm_sp=MWEDD-_-Registry-_-CHECK%20OUT%20THE%20DEALS", target: "_blank", className: "link" },
 								"Perks & Privileges"
 							),
 							"."
