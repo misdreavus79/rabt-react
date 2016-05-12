@@ -12,16 +12,22 @@ html{
 		box-sizing: border-box;
 	}
 }
-#bodyContainer{
+#homeContainer, #bookContainer, #confirmContainer{
 	width: 1080px;
 	margin: 0 auto;
 	border: 1px solid rgba(0, 0, 0, .2);
+	position: relative;
 }
-
+.desktop article{
+	background-image: url('main-img.png');
+	padding: 10px;
+}
 .cPrimary{
 	background-color: rgba(255,255,255,.4);
 	color: $darkGray;
-	width: 45%;
+	width: 50%;
+	margin-left: 10px;
+	padding: 10px;
 }
 .cCTA{
 	.link:link, .link:visited{
@@ -50,6 +56,7 @@ html{
 	h2{
 		box-shadow: 0 3px 1px 1px rgba(0, 0, 0, .2);
 		text-align: center;
+		padding-bottom: 9px;
 	}
 	h3{
 		font-size: 24px;

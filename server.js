@@ -8,6 +8,12 @@ app.get('/', function(req, res){
 	//res.render('pages/index');
 	res.send('index.html');
 });
+// app.get('/book', function(req, res){
+// 	res.send('book.html');
+// });
+// app.get('/confirm', function(req, res){
+// 	res.send('confirm.html');
+// });
 
 app.listen(8080);
 

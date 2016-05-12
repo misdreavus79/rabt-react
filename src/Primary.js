@@ -6,10 +6,12 @@ import CallToAction from "CallToAction";
 class Primary extends React.Component{
 	render(){
 		return(
-			<article className="cPrimary">
-				<Title />
-				<Locations locations={this.props.locations} />
-				<CallToAction />
+			<article>
+				<section className="cPrimary">
+					<Title />
+					<Locations locations={this.props.locations} />
+					<CallToAction />
+				</section>
 			</article>
 		)
 	}

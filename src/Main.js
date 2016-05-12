@@ -6,10 +6,28 @@ import Supporting from 'Supporting';
 
 
 class Main extends React.Component {
+	constructor(){
+		super();
+		if(isMobile){
+			this.state = {
+				viewport: 'mobile',
+			}
+		}else{
+			this.state = {
+				viewport: 'desktop'
+			}
+		}
+		this.state.currentPage = window.location.pathname;
+	}
 	render(){
+		console.log(this.state.currentPage);
 		return (
-			<main id="cMain" role="main">
-				<img src="main-img.png" className="mainImg" />
+			<main role="main" className={this.state.viewport}>
+				{(() => {
+					if(this.state.viewport === 'mobile'){
+						return <img src="main-img.png" className="mainImg" />
+					}
+				})()}
 				<Primary locations={this.props.locations} />
 				<Supporting />
 			</main>
@@ -122,5 +140,5 @@ let locations = [
 // 	}
 // });
 
-ReactDOM.render(<Main locations={locations} />, document.getElementById('bodyContainer'));
+ReactDOM.render(<Main locations={locations} />, document.getElementById('homeContainer'));
 
