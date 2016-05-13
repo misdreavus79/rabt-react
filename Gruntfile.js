@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 				}				
 			},
 			browserify: {
-				files: ['src/*.js'],
+				files: ['src/*.js', 'Gruntfile.js'],
 				tasks: ['browserify']
 			},
 			sass: {
@@ -23,8 +23,7 @@ module.exports = function(grunt) {
 						[
 							'babelify', 
 							{
-								presets: ['es2015', 'react'], 
-								plugins: ['transform-react-jsx']
+								presets: ['es2015', 'react']
 							}
 						]
 					],
@@ -36,6 +35,9 @@ module.exports = function(grunt) {
 						'Store': './src/Store.js',
 						'CallToAction': './src/CallToAction.js',
 						'Primary': './src/Primary.js'
+					},
+					browserifyOptions: {
+						standalone: 'test'
 					}
 				},        
 				src: ['src/Main.js'],

@@ -17,6 +17,7 @@
         <script type="text/javascript" src="//libs.coremetrics.com/v4.18.106/eluminate.js"></script>
         <script type="text/javascript" src="//storage.googleapis.com/static.mcomnyapps.net/coremetrics/coremetrics.cmdatataggutils.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="canonical" href="http://macys.com/social/registry-appointment-booking/">
 
         <script>
             //---------------------------------------
@@ -43,39 +44,21 @@
             //---------------------------------------
             // End variables
             //---------------------------------------
-
-            // Cache-busting using timestamp. Have to dynamically create script tag with document.write for now,
-            // replace with server-side rendered index.html, probably.
-
-            (function(impSdkVersion) {
-                var domain = 'imp-dev.herokuapp.com';
-                var sdkUrl = 'secure-netstorage.macys.com/social/prod/'+impSdkVersion+'/public/modules/imp-sdk.js';
-                if (isProduction && isPreproduction) {
-                    domain = 'imp-stage.herokuapp.com';
-                    sdkUrl = 'secure-netstorage.macys.com/social/prod/'+impSdkVersion+'/public/modules/imp-sdk.js';
-                }
-                else if (isProduction && !isPreproduction) {
-                    domain = 'imp-prod.herokuapp.com';
-                    sdkUrl = 'secure-netstorage.macys.com/social/prod/'+impSdkVersion+'/public/modules/imp-sdk.js';
-                }
-                document.write('<script type="text/javascript" src="//'+sdkUrl+'?timestamp='+Date.now().toString()+'"></sc'+'ript>');
-                document.write('<meta property="og:url" content="'+window.location.origin+window.location.pathname+'" />');
-                if (isProduction && !isPreproduction) {
-                    document.write('<link rel="canonical" href="http://macys.com/social/tuxedo-shop-map/">');
-                }
-            })(IMP_SDK_VERSION);
         </script>
     </head>
     <body>
         <div id="ImpSdkHeaderContainer"></div>
         <div id="homeContainer">
+
         </div>
         <div id="ImpSdkFooterContainer"></div>
+        <script src="//secure-netstorage.macys.com/social/prod/1.0.0/public/modules/imp-sdk.js"></script>
         <script>
             ImpSdk.showHeaderAndFooter();
         </script>
         <script src="start.js"></script>
         <img src='//pixel.mathtag.com/event/img?mt_id=707437&mt_adid=108027&v1=&v2=&v3=&s1=&s2=&s3=' width="1px" height="1px" border="0" />
+        <script src="//localhost:35729/livereload.js"></script>
     </body>
 </html>
 
