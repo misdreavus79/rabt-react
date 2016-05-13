@@ -27,13 +27,7 @@
 */
 var assetsDirectory = '';
 
-try {
-    assetsDirectory = FILES_ROOT + 'ipad/';
-} catch (e) {
-    assetsDirectory = '';
-}
-
 var MobileNavConfig = {
-	footerContainer:"#footerContainer",
+	footerContainer:"#ImpSdkFooterContainer",
 	footer:true
 }

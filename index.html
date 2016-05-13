@@ -16,7 +16,7 @@
 
         <script type="text/javascript" src="//libs.coremetrics.com/v4.18.106/eluminate.js"></script>
         <script type="text/javascript" src="//storage.googleapis.com/static.mcomnyapps.net/coremetrics/coremetrics.cmdatataggutils.js"></script>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="src/css/style.css">
         <link rel="canonical" href="http://macys.com/social/registry-appointment-booking/">
 
         <script>
@@ -53,10 +53,15 @@
         </div>
         <div id="ImpSdkFooterContainer"></div>
         <script src="//secure-netstorage.macys.com/social/prod/1.0.0/public/modules/imp-sdk.js"></script>
+        <script src="src/js/start.js"></script>
         <script>
-            ImpSdk.showHeaderAndFooter();
+            if(isMobile){
+                MobileNavLoader.init();
+            }else{
+                ImpSdk.showHeaderAndFooter();
+            }
+            
         </script>
-        <script src="start.js"></script>
         <img src='//pixel.mathtag.com/event/img?mt_id=707437&mt_adid=108027&v1=&v2=&v3=&s1=&s2=&s3=' width="1px" height="1px" border="0" />
         <script src="//localhost:35729/livereload.js"></script>
     </body>

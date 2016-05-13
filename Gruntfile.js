@@ -8,11 +8,11 @@ module.exports = function(grunt) {
 				}				
 			},
 			browserify: {
-				files: ['src/*.js', 'Gruntfile.js'],
+				files: ['dev/*.js', 'Gruntfile.js'],
 				tasks: ['browserify']
 			},
 			sass: {
-      			files: ['src/css/**/*.scss'],
+      			files: ['dev/css/**/*.scss'],
       			tasks: ['sass'],
       		}
 		},
@@ -28,20 +28,20 @@ module.exports = function(grunt) {
 						]
 					],
 					alias: {
-						'Title': './src/Title.js',
-						'Supporting': './src/Supporting.js',
-						'Locations': './src/Locations.js',
-						'States': './src/States.js',
-						'Store': './src/Store.js',
-						'CallToAction': './src/CallToAction.js',
-						'Primary': './src/Primary.js'
+						'Title': './dev/js/components/home/Title.js',
+						'Supporting': './dev/js/components/home/Supporting.js',
+						'Locations': './dev/js/components/home/Locations.js',
+						'States': './dev/js/components/home/States.js',
+						'Store': './dev/js/components/home/Store.js',
+						'CallToAction': './dev/js/components/home/CallToAction.js',
+						'Primary': './dev/js/components/home/Primary.js'
 					},
 					browserifyOptions: {
-						standalone: 'test'
+						standalone: 'registry'
 					}
 				},        
-				src: ['src/Main.js'],
-				dest: 'start.js',
+				dev: ['dev/js/components/**/Main.js'],
+				dest: 'dev/js/start.js',
 			}
 		},
 		uglify: {
@@ -49,14 +49,14 @@ module.exports = function(grunt) {
 			// 	banner: '<%= banner %>\n'
 			// },
 			dist: {
-				src: 'start.js',
+				dev: 'start.js',
 				dest: 'start.min.js'
 			}
 		},
 		sass: {
 			dist: {
 				files: {
-					'style.css': 'src/css/style.scss'
+					'dev/css/style.css': 'dev/css/style.scss'
 				}
 			}
 		},
@@ -66,7 +66,7 @@ module.exports = function(grunt) {
 				// 	banner: '<%= banner %>'
 				// },
 				files: {
-					'style.min.css': ['style.css']
+					'assets/css/style.min.css': ['dev/css/style.css']
 				}
 			}
 		},

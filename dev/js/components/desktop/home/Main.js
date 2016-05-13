@@ -17,17 +17,11 @@ class Main extends React.Component {
 				viewport: 'desktop'
 			}
 		}
-		this.state.currentPage = window.location.pathname;
 	}
 	render(){
 		console.log(this.state.currentPage);
 		return (
 			<main role="main" className={this.state.viewport}>
-				{(() => {
-					if(this.state.viewport === 'mobile'){
-						return <img src="main-img.jpg" className="mainImg" />
-					}
-				})()}
 				<Primary locations={this.props.locations} />
 				<Supporting />
 			</main>
