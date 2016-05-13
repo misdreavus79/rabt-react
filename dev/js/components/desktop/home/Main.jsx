@@ -6,22 +6,9 @@ import Supporting from 'Supporting';
 
 
 class Main extends React.Component {
-	constructor(){
-		super();
-		if(isMobile){
-			this.state = {
-				viewport: 'mobile',
-			}
-		}else{
-			this.state = {
-				viewport: 'desktop'
-			}
-		}
-	}
 	render(){
-		console.log(this.state.currentPage);
 		return (
-			<main role="main" className={this.state.viewport}>
+			<main role="main" className="home">
 				<Primary locations={this.props.locations} />
 				<Supporting />
 			</main>
@@ -133,6 +120,7 @@ let locations = [
 // 		console.log('error');
 // 	}
 // });
-
-ReactDOM.render(<Main locations={locations} />, document.getElementById('homeContainer'));
+if(document.getElementById('homeContainer')){
+	ReactDOM.render(<Main locations={locations} />, document.getElementById('homeContainer'));
+}
 

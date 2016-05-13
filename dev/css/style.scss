@@ -18,10 +18,20 @@ html{
 	border: 1px solid rgba(0, 0, 0, .2);
 	position: relative;
 }
-.desktop article{
-	background-image: url('main-img.jpg');
-	background-repeat: no-repeat;
-	padding: 10px;
+.home {
+	article{
+		background-image: url('../images/main-img.jpg');
+		background-repeat: no-repeat;
+		padding: 10px;
+	}
+}
+.confirm{
+	article{
+		background-image: url('../images/main-img-confirm.jpg');
+		background-repeat: no-repeat;
+		padding: 10px;
+		min-height: 359px;
+	}
 }
 .cPrimary{
 	background-color: rgba(255,255,255,.85);

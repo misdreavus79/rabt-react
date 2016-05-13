@@ -2,13 +2,13 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		watch: {
 			html: {
-				files: ['*.html', 'start.js', 'style.css'],
+				files: ['*.html', 'dev/js/start.js', 'dev/css/style.css'],
 				options: {
 					livereload: 35729
 				}				
 			},
 			browserify: {
-				files: ['dev/*.js', 'Gruntfile.js'],
+				files: ['dev/js/components/desktop/**/*.jsx', 'Gruntfile.js'],
 				tasks: ['browserify']
 			},
 			sass: {
@@ -28,19 +28,22 @@ module.exports = function(grunt) {
 						]
 					],
 					alias: {
-						'Title': './dev/js/components/home/Title.js',
-						'Supporting': './dev/js/components/home/Supporting.js',
-						'Locations': './dev/js/components/home/Locations.js',
-						'States': './dev/js/components/home/States.js',
-						'Store': './dev/js/components/home/Store.js',
-						'CallToAction': './dev/js/components/home/CallToAction.js',
-						'Primary': './dev/js/components/home/Primary.js'
+						'Title': './dev/js/components/desktop/home/Title.jsx',
+						'Supporting': './dev/js/components/desktop/home/Supporting.jsx',
+						'Locations': './dev/js/components/desktop/home/Locations.jsx',
+						'States': './dev/js/components/desktop/home/States.jsx',
+						'Store': './dev/js/components/desktop/home/Store.jsx',
+						'CallToAction': './dev/js/components/desktop/home/CallToAction.jsx',
+						'Primary': './dev/js/components/desktop/home/Primary.jsx',
+						'CTA': './dev/js/components/desktop/confirm/CTA.jsx',
+						'GoodBye': './dev/js/components/desktop/confirm/GoodBye.jsx',
+						'Ads': './dev/js/components/desktop/confirm/Ads.jsx'
 					},
 					browserifyOptions: {
 						standalone: 'registry'
 					}
 				},        
-				dev: ['dev/js/components/**/Main.js'],
+				src: ['dev/js/components/**/**/Main.jsx'],
 				dest: 'dev/js/start.js',
 			}
 		},
