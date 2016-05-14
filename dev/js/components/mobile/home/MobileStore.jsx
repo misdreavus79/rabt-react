@@ -1,6 +1,6 @@
 import React from "react";
 
-class Store extends React.Component {
+class MobileStore extends React.Component {
 	render(){
 		return (
 			<li>
@@ -10,4 +10,4 @@ class Store extends React.Component {
 	}
 }
 
-export default Store;
+export default MobileStore;

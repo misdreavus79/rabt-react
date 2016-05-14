@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 				}				
 			},
 			browserify: {
-				files: ['dev/js/components/desktop/**/*.jsx', 'Gruntfile.js'],
+				files: ['dev/js/components/**/**/*.jsx', 'Gruntfile.js'],
 				tasks: ['browserify']
 			},
 			sass: {
@@ -37,7 +37,17 @@ module.exports = function(grunt) {
 						'Primary': './dev/js/components/desktop/home/Primary.jsx',
 						'CTA': './dev/js/components/desktop/confirm/CTA.jsx',
 						'GoodBye': './dev/js/components/desktop/confirm/GoodBye.jsx',
-						'Ads': './dev/js/components/desktop/confirm/Ads.jsx'
+						'Ads': './dev/js/components/desktop/confirm/Ads.jsx',
+						'MobileCallToAction': './dev/js/components/mobile/home/MobileCallToAction.jsx',
+						'MobileLocations': './dev/js/components/mobile/home/MobileLocations.jsx',
+						'MobilePrimary': './dev/js/components/mobile/home/MobilePrimary.jsx',
+						'MobileStates': './dev/js/components/mobile/home/MobileStates.jsx',
+						'MobileStore': './dev/js/components/mobile/home/MobileStore.jsx',
+						'MobileNavConfig': './dev/js/lib/MobileNavConfig.js',
+						'MobileNavLoader': './dev/js/lib/MobileNavLoader.js',
+						'MobileAds': './dev/js/components/mobile/confirm/MobileAds.jsx',
+						'MobileCTA': './dev/js/components/mobile/confirm/MobileCTA.jsx',
+						'MobileGoodBye': './dev/js/components/mobile/confirm/MobileGoodBye.jsx'
 					},
 					browserifyOptions: {
 						standalone: 'registry'

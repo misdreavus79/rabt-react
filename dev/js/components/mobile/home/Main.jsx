@@ -1,29 +1,15 @@
 import React from "react";
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import Primary from 'Primary';
-import Supporting from 'Supporting';
+import MobilePrimary from 'MobilePrimary';
 
 
-class Main extends React.Component {
-	constructor(){
-		super();
-		if(isMobile){
-			this.state = {
-				viewport: 'mobile',
-			}
-		}else{
-			this.state = {
-				viewport: 'desktop'
-			}
-		}
-	}
+class MobileMain extends React.Component {
 	render(){
-		console.log(this.state.currentPage);
 		return (
-			<main role="main" className={this.state.viewport}>
-				<Primary locations={this.props.locations} />
-				<Supporting />
+			<main role="main">
+				<img src="http://localhost:8080/dev/images/main-img-mobile.jpg" alt="Registry Appointment Booking" />
+				<MobilePrimary locations={this.props.locations} />
 			</main>
 		)
 	}
@@ -133,6 +119,7 @@ let locations = [
 // 		console.log('error');
 // 	}
 // });
-
-ReactDOM.render(<Main locations={locations} />, document.getElementById('homeContainer'));
+if(isMobile && document.getElementById('homeContainer')){
+	ReactDOM.render(<MobileMain locations={locations} />, document.getElementById('homeContainer'));
+}
 

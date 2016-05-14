@@ -120,7 +120,7 @@ let locations = [
 // 		console.log('error');
 // 	}
 // });
-if(document.getElementById('homeContainer')){
+if(!isMobile && document.getElementById('homeContainer')){
 	ReactDOM.render(<Main locations={locations} />, document.getElementById('homeContainer'));
 }
 

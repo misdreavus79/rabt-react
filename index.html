@@ -53,15 +53,22 @@
         </div>
         <div id="ImpSdkFooterContainer"></div>
         <script src="//secure-netstorage.macys.com/social/prod/1.0.0/public/modules/imp-sdk.js"></script>
-        <script src="dev/js/start.js"></script>
+        <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+        <script src="dev/js/lib/MobileNavConfig.js"></script>
+        <script src="dev/js/lib/MobileNavLoader.js"></script>
         <script>
             if(isMobile){
+                var ppp = document.createElement('meta');
+                ppp.setAttribute("name", "viewport");
+                ppp.setAttribute("content", "width=640, user-scalable=no, target-densityDpi=360");
+                document.querySelector('head').appendChild(ppp);
                 MobileNavLoader.init();
             }else{
                 ImpSdk.showHeaderAndFooter();
             }
             
         </script>
+        <script src="dev/js/start.js"></script>
         <img src='//pixel.mathtag.com/event/img?mt_id=707437&mt_adid=108027&v1=&v2=&v3=&s1=&s2=&s3=' width="1px" height="1px" border="0" />
         <script src="//localhost:35729/livereload.js"></script>
     </body>

@@ -1,7 +1,7 @@
 import React from "react";
-import Store from "Store";
+import MobileStore from "Store";
 
-class States extends React.Component {
+class MobileStates extends React.Component {
 	render(){
 		return (
 			<li className="stateContainer">
@@ -9,7 +9,7 @@ class States extends React.Component {
 				<ul>
 					{
 						this.props.state.stores.map((single) => {	
-							return <Store location={single} key={single.city} /> 
+							return <MobileStore location={single} key={single.city} /> 
 						})
 					}
 				</ul>
@@ -18,4 +18,4 @@ class States extends React.Component {
 	}
 }
 
-export default States;
+export default MobileStates;

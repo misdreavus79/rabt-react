@@ -381,11 +381,15 @@ h2 {
 html * {
   box-sizing: border-box; }
 
+img {
+  max-width: 100%; }
+
 #homeContainer, #bookContainer, #confirmContainer {
   width: 960px;
-  margin: 0 auto;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  position: relative; }
+  margin: 0 auto; }
+
+#homeContainer {
+  border: 1px solid rgba(0, 0, 0, 0.2); }
 
 .home article {
   background-image: url("../images/main-img.jpg");
@@ -475,5 +479,61 @@ html * {
   font-size: 36px;
   color: #fff;
   padding-top: 3px; }
+
+.confirm article {
+  padding-top: 50px;
+  padding-left: 25px; }
+.confirm .cPrimary {
+  width: 56%; }
+.confirm h2 {
+  text-align: center;
+  margin: 18px 0; }
+.confirm .button:first-of-type {
+  margin-right: 34px; }
+
+.ads a {
+  display: inline-block;
+  margin: 0 41px 0 0; }
+  .ads a:last-of-type {
+    margin-right: 0; }
+
+@media screen and (max-width: 768px) {
+  .home article, .confirm article {
+    background-image: none; }
+
+  #homeContainer, #bookContainer, #confirmContainer, .cPrimary {
+    width: 100%;
+    border: none; }
+
+  .cLocations > ul {
+    float: none; }
+
+  .cLocations > ul:first-of-type {
+    margin-right: 0; }
+
+  .cLocations > ul ul {
+    padding-left: 0;
+    list-style: none; }
+
+  .button {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    padding: 20px 0; }
+
+  .state {
+    font-size: 24px; }
+
+  .cLocations > ul ul > li {
+    font-size: 18px; }
+
+  .confirm h2 {
+    padding: 0 30px; }
+  .confirm .cPrimary, .confirm article {
+    padding-bottom: 0; }
+
+  .ads a {
+    display: block;
+    margin: 18px 0; } }
 
 /*# sourceMappingURL=style.css.map */

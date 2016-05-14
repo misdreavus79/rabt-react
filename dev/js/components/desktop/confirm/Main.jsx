@@ -16,6 +16,6 @@ class Main extends React.Component {
 	}
 }
 
-if(document.getElementById('confirmContainer')){
+if(!isMobile && document.getElementById('confirmContainer')){
 	ReactDOM.render(<Main />, document.getElementById('confirmContainer'));
 }
