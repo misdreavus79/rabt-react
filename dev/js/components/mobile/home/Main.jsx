@@ -1,14 +1,28 @@
 import React from "react";
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
+import MobileNavLoader from "MobileNavLoader";
 import MobilePrimary from 'MobilePrimary';
 
 
 class MobileMain extends React.Component {
+	constructor(){
+		super();
+		this.state = {
+			loader: new MobileNavLoader()
+		}
+	}
+	componentWillMount(){
+		window.MobileNavConfig = {
+			footerContainer:"#ImpSdkFooterContainer",
+			footer:true
+		}
+		this.state.loader.init();
+	}
 	render(){
 		return (
 			<main role="main">
-				<img src="http://localhost:8080/dev/images/main-img-mobile.jpg" alt="Registry Appointment Booking" />
+				<img src="../../../../dev/images/main-img-mobile.jpg" alt="Registry Appointment Booking" />
 				<MobilePrimary locations={this.props.locations} />
 			</main>
 		)

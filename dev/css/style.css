@@ -488,8 +488,6 @@ img {
 .confirm h2 {
   text-align: center;
   margin: 18px 0; }
-.confirm .button:first-of-type {
-  margin-right: 34px; }
 
 .ads a {
   display: inline-block;
@@ -501,7 +499,7 @@ img {
   .home article, .confirm article {
     background-image: none; }
 
-  #homeContainer, #bookContainer, #confirmContainer, .cPrimary {
+  #homeContainer, #bookContainer, #confirmContainer, .cPrimary, .confirm .cPrimary {
     width: 100%;
     border: none; }
 
@@ -528,9 +526,11 @@ img {
     font-size: 18px; }
 
   .confirm h2 {
-    padding: 0 30px; }
+    padding: 0 30px;
+    text-align: left; }
   .confirm .cPrimary, .confirm article {
-    padding-bottom: 0; }
+    padding-bottom: 0;
+    padding-left: 15px; }
 
   .ads a {
     display: block;

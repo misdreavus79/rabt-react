@@ -138,9 +138,9 @@ img{
 		text-align: center;
 		margin: 18px 0;
 	}
-	.button:first-of-type{
-		margin-right: 34px;
-	}
+	// .button:first-of-type{
+	// 	margin-right: 34px;
+	// }
 }
 .ads{
 	a{
@@ -155,7 +155,7 @@ img{
 	.home article, .confirm article{
 		background-image: none;
 	}
-	#homeContainer, #bookContainer, #confirmContainer, .cPrimary{
+	#homeContainer, #bookContainer, #confirmContainer, .cPrimary, .confirm .cPrimary{
 		width: 100%;
 		border: none;
 	}
@@ -184,9 +184,11 @@ img{
 	.confirm {
 		h2{
 			padding: 0 30px;
+			text-align: left;
 		}
 		.cPrimary, article{
 			padding-bottom: 0;
+			padding-left: 15px;
 		}
 	}
 	.ads{

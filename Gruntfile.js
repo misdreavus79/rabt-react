@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		watch: {
 			html: {
-				files: ['*.html', 'dev/js/start.js', 'dev/css/style.css'],
+				files: ['public/**/*.html', 'dev/js/start.js', 'dev/css/style.css', 'index.html', 'book/index.html', 'confirm/index.html'],
 				options: {
 					livereload: 35729
 				}				
