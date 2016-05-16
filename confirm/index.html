@@ -7,23 +7,26 @@
         Modify the meta tags below to your liking
         -->
         <link href="//storage.googleapis.com/static.mcomnyapps.net/favicon.ico" rel="shortcut icon">
-        <meta name="title" content="The Tuxedo Shop at Macy's Store Locator - Macy's">
+        <meta name="title" content="Book Your In-Store Registry Appointment - Wedding Registry - Macy's">
         <meta name="description" content="Book online to visit a Macy’s store and get expert wedding registry tips and advice for the perfect list and more. Available at select stores.">
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Book Your In-Store Registry Appointment - Wedding Registry - Macy's" />
         <meta property="og:description" content="Book online to visit a Macy’s store and get expert wedding registry tips and advice for the perfect list and more. Available at select stores." />
         <meta property="og:image" content="http://cmsstatic.mcomnyapps.net/379/2850/1385143284_mog_logo.png" />
 
-        <script type="text/javascript" src="//libs.coremetrics.com/v4.18.106/eluminate.js"></script>
+        <script type="text/javascript" src="//libs.coremetrics.com/v4.18.130/eluminate.js"></script>
         <script type="text/javascript" src="//storage.googleapis.com/static.mcomnyapps.net/coremetrics/coremetrics.cmdatataggutils.js"></script>
+        <script src="//s.btstatic.com/tag.js"> { site: "YQClrLy", mode: "sync" } </script>
         <link rel="stylesheet" type="text/css" href="../dev/css/style.css">
-        <link rel="canonical" href="http://macys.com/social/registry-appointment-booking/">
+        <link rel="canonical" href="http://macys.com/social/registry-appointment-booking/confirm/">
 
         <script>
             //---------------------------------------
             // Modify these variables to your liking
             //---------------------------------------
-            var isProduction = /https?:\/\/social-(prod|preprod)\.herokuapp\.com/.test(window.location.href) || /https?:\/\/.*\.macys\.com/.test(window.location.href) || /https?:\/\/social\.macys\.com/.test(window.location.href) || /https?:\/\/social-(prod|preprod)\.fds\.com/.test(window.location.href),
+            var IMP_SDK_VERSION = "1.0.0",
+
+                isProduction = /https?:\/\/social-prod\.herokuapp\.com/.test(window.location.href) || /https?:\/\/.*\.macys\.com/.test(window.location.href) || /https?:\/\/social\.macys\.com/.test(window.location.href) || /https?:\/\/social-prod\.fds\.com/.test(window.location.href),
 
                 isPreproduction = /(http:\/\/|https:\/\/)social-preprod\.herokuapp\.com/.test(window.location.href) || /(http:\/\/|https:\/\/)social-preprod\.fds\.com/.test(window.location.href),
                 isPreProduction = isPreproduction,
@@ -39,6 +42,9 @@
 
                 cm_HOST = 'www3.macys.com/cm?',
                 cm_ClientID = '90067660';
+            if(isPreproduction){
+                cm_ClientID = '80067660';
+            }
             //---------------------------------------
             // End variables
             //---------------------------------------
@@ -64,6 +70,7 @@
                 document.querySelector('head').appendChild(ppp);
             }else{
                 ImpSdk.showHeaderAndFooter();
+                ImpSdk.coremetrics.registerPageView('registryappointmentbookingtool.landingpage', 'IMP');
             }
             
         </script>
@@ -72,5 +79,3 @@
         <script src="//localhost:35729/livereload.js"></script>
     </body>
 </html>
-
-

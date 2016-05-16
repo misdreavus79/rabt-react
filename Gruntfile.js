@@ -57,20 +57,20 @@ module.exports = function(grunt) {
 				dest: 'dev/js/start.js',
 			}
 		},
-		uglify: {
-			// options: {
-			// 	banner: '<%= banner %>\n'
-			// },
-			dist: {
-				dev: 'start.js',
-				dest: 'start.min.js'
-			}
-		},
 		sass: {
 			dist: {
 				files: {
 					'dev/css/style.css': 'dev/css/style.scss'
 				}
+			}
+		},
+		uglify: {
+			// options: {
+			// 	banner: '<%= banner %>\n'
+			// },
+			dist: {
+				src: 'dev/js/start.js',
+				dest: 'assets/js/start.min.js'
 			}
 		},
 		cssmin: {
@@ -92,11 +92,36 @@ module.exports = function(grunt) {
 					//'destination': 'source'
 				}
 			}
+		},
+		copy: {
+			img: {
+				cwd: 'dev',
+				src: 'images/**',
+				dest: 'assets/',
+				expand: true
+			},
+			html: {
+				expand: true,
+				src: ['**/*.html', '!**/node_modules/**', '!**/dist/**'],
+				dest: 'dist/public/',
+				options:{
+					process: function(content, srcpath){
+						content = content.replace(/style\.css/g, 'style.min.css');
+						content = content.replace('<script src="//localhost:35729/livereload.js"></script>', '');
+						content = content.replace(/start\.js/g, 'start.min.css');
+						return content;
+					}
+				}
+			}
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-browserify');
 	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.registerTask('default', ['watch']);
+	grunt.registerTask('cp', ['copy']);
 };

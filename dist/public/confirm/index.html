@@ -7,17 +7,18 @@
         Modify the meta tags below to your liking
         -->
         <link href="//storage.googleapis.com/static.mcomnyapps.net/favicon.ico" rel="shortcut icon">
-        <meta name="title" content="The Tuxedo Shop at Macy's Store Locator - Macy's">
+        <meta name="title" content="Book Your In-Store Registry Appointment - Wedding Registry - Macy's">
         <meta name="description" content="Book online to visit a Macy’s store and get expert wedding registry tips and advice for the perfect list and more. Available at select stores.">
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Book Your In-Store Registry Appointment - Wedding Registry - Macy's" />
         <meta property="og:description" content="Book online to visit a Macy’s store and get expert wedding registry tips and advice for the perfect list and more. Available at select stores." />
         <meta property="og:image" content="http://cmsstatic.mcomnyapps.net/379/2850/1385143284_mog_logo.png" />
 
-        <script type="text/javascript" src="//libs.coremetrics.com/v4.18.106/eluminate.js"></script>
+        <script type="text/javascript" src="//libs.coremetrics.com/v4.18.130/eluminate.js"></script>
         <script type="text/javascript" src="//storage.googleapis.com/static.mcomnyapps.net/coremetrics/coremetrics.cmdatataggutils.js"></script>
-        <link rel="stylesheet" type="text/css" href="dev/css/style.css">
-        <link rel="canonical" href="http://macys.com/social/registry-appointment-booking/">
+        <script src="//s.btstatic.com/tag.js"> { site: "YQClrLy", mode: "sync" } </script>
+        <link rel="stylesheet" type="text/css" href="../dev/css/style.min.css">
+        <link rel="canonical" href="http://macys.com/social/registry-appointment-booking/confirm/">
 
         <script>
             //---------------------------------------
@@ -25,7 +26,7 @@
             //---------------------------------------
             var IMP_SDK_VERSION = "1.0.0",
 
-                isProduction = /https?:\/\/social-(prod|preprod)\.herokuapp\.com/.test(window.location.href) || /https?:\/\/.*\.macys\.com/.test(window.location.href) || /https?:\/\/social\.macys\.com/.test(window.location.href) || /https?:\/\/social-(prod|preprod)\.fds\.com/.test(window.location.href),
+                isProduction = /https?:\/\/social-prod\.herokuapp\.com/.test(window.location.href) || /https?:\/\/.*\.macys\.com/.test(window.location.href) || /https?:\/\/social\.macys\.com/.test(window.location.href) || /https?:\/\/social-prod\.fds\.com/.test(window.location.href),
 
                 isPreproduction = /(http:\/\/|https:\/\/)social-preprod\.herokuapp\.com/.test(window.location.href) || /(http:\/\/|https:\/\/)social-preprod\.fds\.com/.test(window.location.href),
                 isPreProduction = isPreproduction,
@@ -41,6 +42,9 @@
 
                 cm_HOST = 'www3.macys.com/cm?',
                 cm_ClientID = '90067660';
+            if(isPreproduction){
+                cm_ClientID = '80067660';
+            }
             //---------------------------------------
             // End variables
             //---------------------------------------
@@ -48,29 +52,30 @@
     </head>
     <body>
         <div id="ImpSdkHeaderContainer"></div>
-        <div id="bookContainer">
+        <div id="confirmContainer">
+
         </div>
         <div id="ImpSdkFooterContainer"></div>
         <script src="//secure-netstorage.macys.com/social/prod/1.0.0/public/modules/imp-sdk.js"></script>
-        <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
-        <script src="dev/js/lib/MobileNavConfig.js"></script>
-        <script src="dev/js/lib/MobileNavLoader.js"></script>
         <script>
             if(isMobile){
-                var ppp = document.createElement('meta');
+                var ppp = document.createElement('meta'),
+                    jq = document.createElement('script');
                 ppp.setAttribute("name", "viewport");
                 ppp.setAttribute("content", "width=640, user-scalable=no, target-densityDpi=360");
+                jq.setAttribute('src', "https://code.jquery.com/jquery-2.2.3.min.js");
+                jq.setAttribute('integrity', 'sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=');
+                jq.setAttribute('crossorigin', "anonymous");
+                document.querySelector('head').appendChild(jq);
                 document.querySelector('head').appendChild(ppp);
-                MobileNavLoader.init();
             }else{
                 ImpSdk.showHeaderAndFooter();
+                ImpSdk.coremetrics.registerPageView('registryappointmentbookingtool.landingpage', 'IMP');
             }
             
         </script>
-        <script src="dev/js/start.js"></script>
+        <script src="../dev/js/start.min.css"></script>
         <img src='//pixel.mathtag.com/event/img?mt_id=707437&mt_adid=108027&v1=&v2=&v3=&s1=&s2=&s3=' width="1px" height="1px" border="0" />
-        <script src="//localhost:35729/livereload.js"></script>
+        
     </body>
 </html>
-
-
