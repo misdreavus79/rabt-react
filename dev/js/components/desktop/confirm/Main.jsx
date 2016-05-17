@@ -10,12 +10,12 @@ class Main extends React.Component {
 			<main role="main" className="confirm">
 				<GoodBye />
 				<h2>Your list. Your Look. Your "I do." We can help.</h2>
-				<Ads />
+				<Ads assets={this.props.assets} />
 			</main>
 		)
 	}
 }
 
 if(!isMobile && document.getElementById('confirmContainer')){
-	ReactDOM.render(<Main />, document.getElementById('confirmContainer'));
+	ReactDOM.render(<Main assets="https://storage.googleapis.com/imp-projects/rabt" />, document.getElementById('confirmContainer'));
 }

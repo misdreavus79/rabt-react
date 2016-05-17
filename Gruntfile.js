@@ -108,10 +108,14 @@ module.exports = function(grunt) {
 					process: function(content, srcpath){
 						content = content.replace(/style\.css/g, 'style.min.css');
 						content = content.replace('<script src="//localhost:35729/livereload.js"></script>', '');
-						content = content.replace(/start\.js/g, 'start.min.css');
+						content = content.replace(/start\.js/g, 'start.min.js');
 						return content;
 					}
 				}
+			},
+			pkgJson: {
+				src: 'package.json',
+				dest: 'dist/'
 			}
 		}
 	});
@@ -124,4 +128,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.registerTask('default', ['watch']);
 	grunt.registerTask('cp', ['copy']);
+	grunt.registerTask('css', ['cssmin']);
+	grunt.registerTask('js', ['uglify']);
 };
