@@ -364,11 +364,18 @@ textarea {
   font: inherit;
   /* 2 */ }
 
+@font-face {
+  font-family: 'clarendon';
+  src: url("https://storage.googleapis.com/imp-projects/rabt/fonts/ClarendonLTStd.eot");
+  src: url("https://storage.googleapis.com/imp-projects/rabt/fonts/ClarendonLTStd.eot?#iefix") format("embedded-opentype"), url("https://storage.googleapis.com/imp-projects/rabt/fonts/ClarendonLTStd.woff") format("woff"), url("https://storage.googleapis.com/imp-projects/rabt/fonts/ClarendonLTStd.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal; }
 h1, h2, h3, h4, h5, h6 {
   color: #9c023e; }
 
 h1 {
-  margin-top: 0; }
+  margin-top: 0;
+  font-family: "clarendon", "Times New Roman", serif; }
 
 h2 {
   margin: 9px 0; }
@@ -392,15 +399,17 @@ img {
   border: 1px solid rgba(0, 0, 0, 0.2); }
 
 .home article {
-  background-image: url("../images/main-img.jpg");
+  background-image: url("https://storage.googleapis.com/imp-projects/rabt/images/main-img.jpg");
   background-repeat: no-repeat;
   padding: 10px; }
 
 .confirm article {
-  background-image: url("../images/main-img-confirm.jpg");
+  background-image: url("https://storage.googleapis.com/imp-projects/rabt/images/main-img-confirm.jpg");
   background-repeat: no-repeat;
   padding: 10px;
   min-height: 359px; }
+.confirm .button:first-of-type {
+  margin-right: 34px; }
 
 .cPrimary {
   background-color: rgba(255, 255, 255, 0.85);
@@ -456,9 +465,14 @@ img {
 .cSupporting h2 {
   box-shadow: 0 3px 1px 1px rgba(0, 0, 0, 0.2);
   text-align: center;
-  padding-bottom: 9px; }
+  padding-top: 9px;
+  padding-bottom: 9px;
+  font-family: "clarendon", "Times New Roman", serif; }
 .cSupporting h3 {
-  font-size: 24px; }
+  font-size: 22px;
+  margin-bottom: 0;
+  margin-top: 3px;
+  font-family: "clarendon", "Times New Roman", serif; }
 .cSupporting ul {
   padding: 0  29px;
   width: 100%;
@@ -468,6 +482,8 @@ img {
   width: 300px;
   text-align: center;
   padding: 0 50px; }
+.cSupporting p {
+  margin-top: 3px; }
 
 .num {
   background-color: #9c023e;
@@ -478,7 +494,9 @@ img {
   margin-right: auto;
   font-size: 36px;
   color: #fff;
-  padding-top: 3px; }
+  padding-top: 7px;
+  font-family: "clarendon", "Times New Roman", serif;
+  margin-bottom: 9px; }
 
 .confirm article {
   padding-top: 50px;
@@ -487,7 +505,8 @@ img {
   width: 56%; }
 .confirm h2 {
   text-align: center;
-  margin: 18px 0; }
+  margin: 18px 0;
+  font-family: "clarendon", "Times New Roman", serif; }
 
 .ads a {
   display: inline-block;
@@ -497,7 +516,8 @@ img {
 
 @media screen and (max-width: 768px) {
   .home article, .confirm article {
-    background-image: none; }
+    background-image: none;
+    padding-top: 18px; }
 
   #homeContainer, #bookContainer, #confirmContainer, .cPrimary, .confirm .cPrimary {
     width: 100%;
@@ -534,6 +554,9 @@ img {
 
   .ads a {
     display: block;
-    margin: 18px 0; } }
+    margin: 18px 0; }
+
+  .confirm .button:first-of-type {
+    margin-right: 0; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,8 +1,21 @@
+@font-face {
+	font-family: 'clarendon';
+	src: url('https://storage.googleapis.com/imp-projects/rabt/fonts/ClarendonLTStd.eot');
+	src: url('https://storage.googleapis.com/imp-projects/rabt/fonts/ClarendonLTStd.eot?#iefix') format('embedded-opentype'),
+		url('https://storage.googleapis.com/imp-projects/rabt/fonts/ClarendonLTStd.woff') format('woff'),
+		url('https://storage.googleapis.com/imp-projects/rabt/fonts/ClarendonLTStd.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+$font-stack: 'clarendon', "Times New Roman", serif;
+
 h1, h2, h3, h4, h5, h6{
 	color: $mainColor;
 }
 h1{
 	margin-top: 0;
+	font-family: $font-stack;
 }
 h2{
 	margin: 9px 0;

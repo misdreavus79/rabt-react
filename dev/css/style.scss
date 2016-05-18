@@ -24,17 +24,20 @@ img{
 }
 .home {
 	article{
-		background-image: url('../images/main-img.jpg');
+		background-image: url('https://storage.googleapis.com/imp-projects/rabt/images/main-img.jpg');
 		background-repeat: no-repeat;
 		padding: 10px;
 	}
 }
 .confirm{
 	article{
-		background-image: url('../images/main-img-confirm.jpg');
+		background-image: url('https://storage.googleapis.com/imp-projects/rabt/images/main-img-confirm.jpg');
 		background-repeat: no-repeat;
 		padding: 10px;
 		min-height: 359px;
+	}
+	.button:first-of-type{
+		margin-right: 34px;
 	}
 }
 .cPrimary{
@@ -98,10 +101,15 @@ img{
 	h2{
 		box-shadow: 0 3px 1px 1px rgba(0, 0, 0, .2);
 		text-align: center;
+		padding-top: 9px;
 		padding-bottom: 9px;
+		font-family: $font-stack;
 	}
 	h3{
-		font-size: 24px;
+		font-size: 22px;
+		margin-bottom: 0;
+		margin-top: 3px;
+		font-family: $font-stack;
 	}
 	ul{
 		padding: 0  29px;
@@ -114,6 +122,9 @@ img{
 		text-align: center;
 		padding: 0 50px;
 	}
+	p{
+		margin-top: 3px;
+	}
 }
 .num{
 	background-color: $mainColor;
@@ -124,7 +135,9 @@ img{
 	margin-right: auto;
 	font-size: 36px;
 	color: $baseWhite;
-	padding-top: 3px;
+	padding-top: 7px;
+	font-family: $font-stack;
+	margin-bottom: 9px;
 }
 .confirm{
 	article{
@@ -137,6 +150,7 @@ img{
 	h2{
 		text-align: center;
 		margin: 18px 0;
+		font-family: $font-stack;
 	}
 	// .button:first-of-type{
 	// 	margin-right: 34px;
@@ -154,6 +168,7 @@ img{
 @media screen and (max-width: 768px){
 	.home article, .confirm article{
 		background-image: none;
+		padding-top: 18px;
 	}
 	#homeContainer, #bookContainer, #confirmContainer, .cPrimary, .confirm .cPrimary{
 		width: 100%;
@@ -195,6 +210,11 @@ img{
 		a{
 			display: block;
 			margin: 18px 0;
+		}
+	}
+	.confirm{
+		.button:first-of-type{
+			margin-right: 0;
 		}
 	}
 }
